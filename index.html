@@ -1,0 +1,82 @@
+<html>
+
+<head>
+   <title>Minha Média Unijorge</title>
+   <meta name="viewport" content="width=device-width, user-scalable=no" />
+   <link rel="manifest" href="./manifest.json">
+   <meta charset="UTF-8">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+   <meta name="theme-color" content="#D61B24">
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   <script src="assets/js/script.js?v=70"></script>
+   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+   <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+   <script src="assets/js/popper.min.js"></script>
+</head>
+
+<body>
+   <header>
+      <div class="logo"><img src="assets/img/logosite.png" height="100%" /></div>
+   </header>
+   <div class="boxapp">
+      <section class="container">
+         <div class="form-row">
+            <div class="col">
+               <label for="A1">Trabalho 1</label>
+               <input type="number" oninput="calculo(this.value, 't1')" class="buttonApp" id="t1" placeholder="">
+            </div>
+            <div class="col">
+               <label for="A1">Trabalho 2</label>
+               <input type="number" oninput="calculo(this.value, 't2')" class="buttonApp" id="t2" placeholder="">
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="col">
+               <label for="A2">Avaliação A2</label>
+               <input type="number" oninput="calculo(this.value, 'a2')" class="buttonApp" id="a2" placeholder="">
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="col">
+               <label for="A3">Avaliação A3</label>
+               <input type="number" oninput="calculo(this.value, 'a3')" class="buttonApp" id="a3" placeholder="">
+            </div>
+         </div>
+         <div class="resultado" id="resultado">
+            ...
+         </div>
+         <br>
+         <div class="info" style="cursor:pointer" onclick="limparCampos()">LIMPAR CAMPOS</div>
+         <div class="salvarMedia" id="salvarMedia" style="cursor:pointer">Salvar Média</div>
+      </section>
+      <section class="history">
+         <div class="container">
+            Notas salvas:
+            <ul id="materias">
+               <li></li>
+            </ul>
+         </div>
+      </section>
+      <footer>
+         <div><a href="https://www.unijorge.edu.br/">Portal Oficial da UNIJORGE</a></div>
+         <p>ESTE SIMULADOR NÃO TEM NENHUM VÍNCULO COM A UNIJORGE</p>
+         <p>QUALQUER DÚVIDA, POR GENTILEZA ACESSE O SITE OFICIAL.</p>
+         <p>WEB APP | MARCELO SANTANA</p>
+      </footer>
+   </div>
+   <script>
+      if ('serviceWorker' in navigator) {
+         navigator.serviceWorker.register('./sw.js')
+            .then(function () {
+               console.log('service worker registered');
+            })
+            .catch(function () {
+               console.warn('service worker failed');
+            });
+      }
+   </script>
+   <script src="assets/js/storage.js"></script>
+</body>
+
+</html>
